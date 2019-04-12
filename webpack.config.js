@@ -10,28 +10,32 @@ module.exports = {
     path: __dirname + "/dist",
     filename: "[name].min.js",
     libraryTarget: "umd",
-    library: "ReactGridLayout"
+    library: "ReactStyledGridLayout"
   },
   devtool: "source-map",
   externals: {
-    "react": {
-      "commonjs": "react",
-      "commonjs2": "react",
-      "amd": "react",
+    react: {
+      commonjs: "react",
+      commonjs2: "react",
+      amd: "react",
       // React dep should be available as window.React, not window.react
-      "root": "React"
+      root: "React"
     },
     "react-dom": {
-      "commonjs": "react-dom",
-      "commonjs2": "react-dom",
-      "amd": "react-dom",
+      commonjs: "react-dom",
+      commonjs2: "react-dom",
+      amd: "react-dom",
       // React dep should be available as window.React, not window.react
-      "root": "ReactDOM"
+      root: "ReactDOM"
     }
   },
   module: {
-    loaders: [
-      {test: /\.jsx?$/, exclude: /node_modules/, loader: "babel-loader"}
+    rules: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: "babel-loader"
+      }
     ]
   },
   plugins: [
@@ -39,10 +43,10 @@ module.exports = {
       "process.env": {
         NODE_ENV: JSON.stringify("production")
       }
-    }),
+    })
     // Compress, but don't print warnings to console
-    new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}, sourceMap: true}),
-    new webpack.optimize.ModuleConcatenationPlugin(),
+    // new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}, sourceMap: true}),
+    // new webpack.optimize.ModuleConcatenationPlugin(),
   ],
   resolve: {
     extensions: [".js", ".jsx"]

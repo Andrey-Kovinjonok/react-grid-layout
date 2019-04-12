@@ -3,7 +3,8 @@
   "parser": "babel-eslint",
   "plugins": [
     "react",
-    "flowtype"
+    "flowtype",
+    "react-hooks"
   ],
   "extends": [
     "eslint:recommended",
@@ -14,7 +15,8 @@
     "no-console": 0,
     "no-use-before-define": [2, "nofunc"],
     "prefer-const": 2,
-    "react/jsx-boolean-value": [2, "always"]
+    "react/jsx-boolean-value": [2, "always"],
+    "react-hooks/rules-of-hooks": "error"
   },
   "env": {
     "browser": true,

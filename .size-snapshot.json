@@ -1,0 +1,12 @@
+{
+  "dist/react-styled-grid-layout.umd.js": {
+    "bundled": 485,
+    "minified": 423,
+    "gzipped": 202
+  },
+  "index.js": {
+    "bundled": 360,
+    "minified": 344,
+    "gzipped": 156
+  }
+}
